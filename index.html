@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Developer Junayed</title>
     <!-- Latest compiled and minified CSS -->
+    <!-- aos css for scroll animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -14,182 +17,412 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body onload="loader();">
+    <!-- element for loader -->
     <div id="loading"></div>
-      <div class="wrapper">
-        <header>
-          <div class="logo">
-            <div class="avater">
-              <img
-                src="img/download.png"
-                class="border border-primary rounded-circle"
-                alt=""
-              />
+    <!-- main coding start from here -->
+    <div class="wrapper">
+      <!-- header -->
+      <header class="sticky-top bg-white navbarr" data-aos="fade-down">
+        <div class="logo logos">
+          <div class="avater">
+            <img
+              src="img/download.png"
+              class="border border-primary rounded-circle"
+              alt=""
+            />
+            <p>
+              Developer <br />
+              Junayed
+            </p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li>
+              <a
+                href="#"
+                class="btn border border-primary rounded-pill text-primary"
+                >Hire Me!</a
+              >
+            </li>
+          </ul>
+          <div class="menu-bar-icon" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="hero">
+          <div class="hero-img" data-aos="zoom-in-right"></div>
+          <!-- <img src="img/IMG20210422163328.png" alt="" /> -->
+          <div class="type" data-aos="fade-left">
+            <h4>Hello, I'm Junayed</h4>
+            <h3>
+              Expert in Web
+              <div id="typed-strings">
+                <h3>Design</h3>
+                <h3>Development</h3>
+              </div>
+              <span id="typed"></span>
+            </h3>
+            <p>
+              Currently available for select projects, collaborations and
+              consulting.Currently available for select projects, collaborations
+              and consulting.
+            </p>
+            <a href="#" class="btn btn-primary rounded-pill">SEE MY WORK</a>
+          </div>
+        </div>
+        <!-- bio section -->
+        <div class="my-bio">
+          <div class="bio-text">
+            <h4>MY-BIO</h4>
+            <h2>My-BIO</h2>
+          </div>
+          <div class="bio-content d-flex">
+            <div class="bio-content-main float-left" data-aos="fade-right">
               <p>
-                Developer <br />
-                Junayed
+                Hi, This is Junayed. I am a Web Developer and exprienced with
+                many language like HTML5, CSS3, JavaScript, jquery and few
+                framework like bootstrap5, AOS, Sass. I am also exprienced with
+                Wordpress Theme Development. If you have any work related to the
+                topic you can hire me on fiverr.com.
               </p>
-            </div>
-          </div>
-          <nav>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Work</a></li>
-              <li><a href="#">Blog</a></li>
-              <li>
-                <a
-                  href="#"
-                  class="btn border border-primary rounded-pill text-primary"
-                  >Hire Me!</a
-                >
-              </li>
-            </ul>
-            <div class="menu-bar-icon" onclick="myFunction(this)">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-            </div>
-          </nav>
-        </header>
-        <main>
-          <div class="hero">
-            <div class="hero-img"></div>
-            <!-- <img src="img/IMG20210422163328.png" alt="" /> -->
-            <div class="type">
-              <h4>Hello, I'm Junayed</h4>
-              <h3>
-                Expert in Web
-                <div id="typed-strings">
-                  <h3>Design</h3>
-                  <h3>Development</h3>
-                </div>
-                <span id="typed"></span>
-              </h3>
-              <p>
-                Currently available for select projects, collaborations and
-                consulting.Currently available for select projects, collaborations
-                and consulting.
-              </p>
-              <a href="#" class="btn btn-primary rounded-pill">SEE MY WORK</a>
-            </div>
-          </div>
-          <div class="services">
-            <div class="services-txt">
-              <h4>SERVICES</h4>
-              <h2>SERVICES</h2>
-            </div>
-            <div class="services-main">
-              <div class="web-design card">
-                <p><i class="fas fa-code fa-2x"></i></p>
-                <h6>Web Design</h6>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                  recusandae aperiam excepturi!
-                </p>
-              </div>
-  
-              <div class="wp-theme-development card">
-                <p><i class="fas fa-database fa-2x"></i></p>
-                <h6>Wordpress Development</h6>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                  recusandae aperiam excepturi!
-                </p>
-              </div>
-              <div class="wp-theme-customization card">
-                <p><i class="fas fa-tools fa-2x"></i></p>
-                <h6>Wordpress Customization</h6>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                  recusandae aperiam excepturi!
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio">
-            <div class="portfolio-txt">
-              <h4>PORTFOLIO</h4>
-              <h2>PORTFOLIO</h2>
-            </div>
-            <div class="portfolio-main">
-              <div class="portfolio-demo">
-                <div class="demo">
-                  <img src="img/demo1.png" alt="" />
-                  <div class="pd-txt">
-                    <h2>Systemetic</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, aspernatur.</p>
-                    <a href="#" class="btn  rounded-pill">See more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="portfolio-demo">
-                <div class="demo"><img src="img/demo2.png" alt="" /></div>
-              </div>
-              <div class="portfolio-demo">
-                <div class="demo"><img src="img/demo3.png" alt="" /></div>
-              </div>
-              <div class="portfolio-demo">
-                <div class="demo"><img src="img/demo4.png" alt="" /></div>
-              </div>
-              <div class="portfolio-demo">
-                <div class="demo"><img src="img/demo5.png" alt="" /></div>
-              </div>
-              <div class="portfolio-demo">
-                <div class="demo"><img src="img/demo5.png" alt="" /></div>
-              </div>
-            </div>
-          </div>
-          <div class="hire-me">
-            <div class="hm-text">
-              <h3>Make It Awesome!</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                nostrum quam aliquam quis exercitationem placeat culpa, explicabo
-                sint a cum?
-              </p>
-            </div>
-            <div class="hm-btn">
               <a
                 href=""
                 class="btn border border-primary rounded-pill text-primary"
-                >Hire Me Now!</a
+                >Hire me now</a
               >
             </div>
+            <img
+              src="img/bio.svg"
+              class="mb-5"
+              alt=""
+              width="500"
+              height="300"
+              data-aos="fade-left"
+            />
           </div>
-          <div class="feedback">
-            <div class="slider">dlsfldsjflsdjldsjdslfslsd</div>
+        </div>
+        <!-- services section -->
+        <div class="services">
+          <div class="services-txt">
+            <h4>SERVICES</h4>
+            <h2>SERVICES</h2>
           </div>
-        </main>
-        <footer>
-          <div class="footer-menu">
-            <div class="text-nav">
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Blog</a></li>
-              </ul>
-              <input type="search" placeholder="Search..." />
+          <div
+            class="services-main"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
+            <div class="web-design card">
+              <p><i class="fas fa-code fa-2x"></i></p>
+              <h6>Web Design</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                recusandae aperiam excepturi!
+              </p>
             </div>
-            <div class="social-nav">
-              <div class="social"><i class="fab fa-facebook fa-2x"></i></div>
-              <div class="social"><i class="fab fa-twitter fa-2x"></i></div>
-              <div class="social"><i class="fab fa-instagram fa-2x"></i></div>
-              <div class="social"><i class="fab fa-youtube fa-2x"></i></div>
+
+            <div class="wp-theme-development card">
+              <p><i class="fas fa-database fa-2x"></i></p>
+              <h6>Wordpress Development</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                recusandae aperiam excepturi!
+              </p>
+            </div>
+            <div class="wp-theme-customization card">
+              <p><i class="fas fa-tools fa-2x"></i></p>
+              <h6>Wordpress Customization</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                recusandae aperiam excepturi!
+              </p>
+            </div>
+            <div class="wp-theme-customization card">
+              <p><i class="fas fa-tools fa-2x"></i></p>
+              <h6>Wordpress Customization</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                recusandae aperiam excepturi!
+              </p>
             </div>
           </div>
-          <div class="copyright">
-            <p>
-              All rights reserved &copy; 2021,
-              <a href="https://devjunayed.com">devjunayed.com</a>
-            </p>
+        </div>
+
+        <!-- portfolio section -->
+        <div class="portfolio">
+          <div class="portfolio-txt">
+            <h4>PORTFOLIO</h4>
+            <h2>PORTFOLIO</h2>
           </div>
-        </footer>
-      </div>
-      
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+          <div class="portfolio-filter">
+            <ul>
+              <li><a href="#">ALL</a></li>
+              <li><a href="#">MERN</a></li>
+              <li><a href="#">WP THEME</a></li>
+              <li><a href="#">PSD TO HTML</a></li>
+            </ul>
+          </div>
+          <div class="portfolio-main">
+            <div class="portfolio-demo" data-aos="fade-up">
+              <div class="demo">
+                <img src="img/demo1.png" alt="" />
+                <div class="pd-txt">
+                  <h2>Systemetic</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Tempora, aspernatur.
+                  </p>
+                  <a href="#" class="btn rounded-pill">See more</a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-demo" data-aos="fade-up">
+              <div class="demo"><img src="img/demo2.png" alt="" /></div>
+            </div>
+            <div class="portfolio-demo" data-aos="fade-up">
+              <div class="demo"><img src="img/demo3.png" alt="" /></div>
+            </div>
+            <div class="portfolio-demo" data-aos="fade-up">
+              <div class="demo"><img src="img/demo4.png" alt="" /></div>
+            </div>
+            <div class="portfolio-demo" data-aos="fade-up">
+              <div class="demo"><img src="img/demo5.png" alt="" /></div>
+            </div>
+            <div class="portfolio-demo" data-aos="fade-up">
+              <div class="demo"><img src="img/demo5.png" alt="" /></div>
+            </div>
+          </div>
+        </div>
+        <!-- counters -->
+        <div class="row counters pt-5 pb-5">
+          <div class="col-lg-4 col-6 text-center">
+            <span
+              data-purecounter-start="0"
+              data-purecounter-end="232"
+              data-purecounter-duration="1"
+              class="purecounter"
+            ></span>
+            <p>Clients</p>
+          </div>
+
+          <div class="col-lg-4 col-6 text-center">
+            <span
+              data-purecounter-start="0"
+              data-purecounter-end="521"
+              data-purecounter-duration="1"
+              class="purecounter"
+            ></span>
+            <p>Projects</p>
+          </div>
+
+          <div class="col-lg-4 col-6 text-center">
+            <span
+              data-purecounter-start="0"
+              data-purecounter-end="1463"
+              data-purecounter-duration="1"
+              class="purecounter"
+            ></span>
+            <p>Supporting Hours</p>
+          </div>
+        </div>
+        <!-- My skills -->
+
+        <div class="my-skills pb-5">
+          <div class="myskills-text">
+            <h4>MY-SKILLS</h4>
+            <h2>MY SKILLS</h2>
+          </div>
+          <div class="skills">
+            <div class="progress" data-aos="fade-right" data-aos-duration="600">
+              <div
+                class="progress-bar bg-primary"
+                role="progressbar"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 90%"
+              >
+                <span class="skill">HTML5 <i class="val">90%</i></span>
+              </div>
+            </div>
+            <div class="progress" data-aos="fade-right" data-aos-duration="700">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 85%"
+              >
+                <span class="skill">CSS3 <i class="val">85%</i></span>
+              </div>
+            </div>
+            <div class="progress" data-aos="fade-right" data-aos-duration="800">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 80%"
+              >
+                <span class="skill">JavaScript <i class="val">80%</i></span>
+              </div>
+            </div>
+            <div class="progress" data-aos="fade-right" data-aos-duration="900">
+              <div
+                class="progress-bar bg-warning"
+                role="progressbar"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 70%"
+              >
+                <span class="skill">Jquery <i class="val">70%</i></span>
+              </div>
+            </div>
+            <div
+              class="progress"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 75%"
+              >
+                <span class="skill"
+                  >Wordpress Theme Development <i class="val">75%</i></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- feedback slider -->
+        <div class="myskills-text">
+          <h4>CLIENTS</h4>
+          <h2>CLIENTS</h2>
+        </div>
+        <div class="feedback" data-aos="zoom-in">
+          <div
+            id="carouselExampleInterval"
+            class="carousel carousel-dark slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="1000">
+                <img
+                  src="img/demo1.png"
+                  class="d-block"
+                  width="1180"
+                  height="400"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="1000">
+                <img
+                  src="img/demo2.png"
+                  class="d-block"
+                  width="1180"
+                  height="400"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/demo3.png"
+                  class="d-block"
+                  width="1180"
+                  height="400"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleInterval"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleInterval"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer start -->
+      <footer data-aos="fade-up">
+        <div class="footer-menu">
+          <div class="text-nav">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Work</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+            <input type="search" placeholder="Search..." />
+          </div>
+          <div class="social-nav">
+            <div class="social"><i class="fab fa-facebook fa-2x"></i></div>
+            <div class="social"><i class="fab fa-twitter fa-2x"></i></div>
+            <div class="social"><i class="fab fa-instagram fa-2x"></i></div>
+            <div class="social"><i class="fab fa-youtube fa-2x"></i></div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            All rights reserved &copy; 2021,
+            <a href="https://devjunayed.com">devjunayed.com</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+
+
+
+    <!-- basic jquery file -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -198,6 +431,8 @@
     ></script>
     <script src="js/all.min.js"></script>
     <script src="js/typed.js"></script>
+
+    <!-- Js file for the typescript -->
     <script>
       var typed = new Typed("#typed", {
         stringsElement: "#typed-strings",
@@ -206,20 +441,30 @@
         backSpeed: "5",
       });
     </script>
-    <script>
-      $(document).ready(function () {
-        $(".card").mouseover(function () {
-          $(".card-hover").slideUp();
-        });
-      });
-    </script>
+
+    <!-- Js file for the loader -->
     <script>
       function myFunction(x) {
         x.classList.toggle("change");
       }
-      function loader(){
+      function loader() {
         document.getElementById("loading").style.display = "none";
       }
     </script>
+
+    <!-- aos script for scroll animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: "40",
+        duration: "2000",
+        once: "true",
+      });
+    </script>
+    <!-- pure counter js file -->
+    <script src="js/purecounter.js"></script>
+
+    <!-- my main js -->
+    <script src="main.js"></script>
   </body>
 </html>
