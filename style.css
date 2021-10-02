@@ -8,10 +8,18 @@
 }
 body {
   overflow-x: hidden;
-  background-color: black;
 }
-#loading{
-  background: #fff url('img/spinner.gif') no-repeat center;
+.purecounter {
+  font-size: 24px;
+}
+.counters {
+  margin: 0 auto;
+}
+/*
+    CSS for loading icon
+*/
+#loading {
+  background: #fff url("img/spinner.gif") no-repeat center;
   background-size: 5%;
   height: 100vh;
   z-index: 9999999999;
@@ -20,7 +28,7 @@ body {
 }
 .wrapper {
   margin: 0 auto;
-  max-width: 980px;
+  min-width: 1200px;
   height: auto;
   background-color: white;
 }
@@ -46,6 +54,7 @@ header {
   padding: 25px 25px 0px 25px;
   border-bottom: 1px solid #ddd;
   box-shadow: 1px 1px blanchedalmond;
+  max-height: 70px;
 }
 .logo {
   position: relative;
@@ -79,14 +88,16 @@ nav ul li a {
 }
 
 /*Menu bar icon*/
-.menu-bar-icon{
+.menu-bar-icon {
   position: absolute;
   right: 0;
   top: -30px;
   display: none;
   cursor: pointer;
 }
-.bar1, .bar2, .bar3{
+.bar1,
+.bar2,
+.bar3 {
   width: 35px;
   height: 5px;
   background-color: #333;
@@ -94,8 +105,8 @@ nav ul li a {
   transition: 0.4s;
 }
 .change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-  transform: rotate(-45deg) translate(-9px, 6px) ;
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
 }
 
 /* Fade out the second bar */
@@ -105,24 +116,27 @@ nav ul li a {
 
 /* Rotate last bar */
 .change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-  transform: rotate(45deg) translate(-8px, -8px) ;
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 /*=========================================================
                     main
 ===========================================================*/
+main {
+  margin: 0 auto;
+  max-width: 1160px;
+}
 .hero {
   clear: both;
   position: relative;
   min-height: 350px;
 }
-.hero-img{
+.hero-img {
   margin: 20px;
   min-height: 350px;
-  background: url('img/IMG20210422163328.png') no-repeat ;
+  background: url("img/IMG20210422163328.png") no-repeat;
   background-size: 350px 400px;
 }
-
 
 .type {
   max-width: 50%;
@@ -134,6 +148,17 @@ nav ul li a {
   color: rgb(20, 164, 230);
 }
 /*==============================================================
+                    Bio data
+===============================================================*/
+.my-bio{
+  background-color: #f4f4f4;
+}
+.bio-content {
+  width: 80%;
+  margin: 0 auto;
+  text-align: justify;
+}
+/*==============================================================
                     Services
 ================================================================*/
 
@@ -143,7 +168,9 @@ nav ul li a {
   position: relative;
 }
 .services-txt,
-.portfolio-txt {
+.portfolio-txt,
+.bio-text,
+.myskills-text {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,7 +178,9 @@ nav ul li a {
   padding-bottom: 50px;
 }
 .services h4,
-.portfolio h4 {
+.portfolio h4,
+.bio-text h4,
+.myskills-text h4 {
   position: relative;
   word-spacing: 200px;
   font-family: Myriad Pro, sans-serif;
@@ -160,7 +189,9 @@ nav ul li a {
   opacity: 0.5;
 }
 .services-txt > h2,
-.portfolio-txt > h2 {
+.portfolio-txt > h2,
+.bio-text > h2,
+.myskills-text > h2 {
   position: absolute;
   font-size: 38px;
   opacity: 0.1;
@@ -216,6 +247,20 @@ nav ul li a {
 /*============================================
                 Portfolio
 ==============================================*/
+.portfolio-filter ul {
+  display: flex;
+  justify-content: center;
+}
+.portfolio-filter ul li {
+}
+.portfolio-filter ul li a {
+  padding: 8px 18px;
+  border: 1px solid gainsboro;
+  color: grey;
+}
+.portfolio-filter ul li a:hover {
+  background-color: rgb(223, 226, 223);
+}
 .portfolio {
   clear: both;
   overflow: hidden;
@@ -239,41 +284,37 @@ nav ul li a {
   border: 1px solid #ddd;
   min-height: 200px;
   position: relative;
-  
 }
-.portfolio-demo::after{
-
+.portfolio-demo::after {
   content: "";
   position: absolute;
-background-color: blue;
-top: 0;
-left: 0;
-opacity: 0;
-min-height: 240px;
-width: 250px;
+  background-color: blue;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  min-height: 240px;
+  width: 250px;
 
-transition: .5s ease-in-out;
-
+  transition: 0.5s ease-in-out;
 }
-.portfolio-demo:hover::after{
+.portfolio-demo:hover::after {
   opacity: 0.5;
 }
-.portfolio-demo:hover .pd-txt{
+.portfolio-demo:hover .pd-txt {
   color: white !important;
   opacity: 1;
-  z-index: 9999999999;
+  z-index: 9999;
 }
 
 .portfolio-demo > .demo {
 }
 .portfolio-demo > .demo > img {
   max-width: 250px;
-
 }
 .portfolio-demo > .demo > img:hover {
 }
 
-.pd-txt{
+.pd-txt {
   z-index: -1;
   text-align: center;
   opacity: 0;
@@ -282,29 +323,47 @@ transition: .5s ease-in-out;
   position: absolute;
   transition: 1s ease-in;
 }
-.pd-txt>h2, .pd-txt>p{
+.pd-txt > h2,
+.pd-txt > p {
   color: white !important;
 }
-.pd-txt a{
+.pd-txt a {
   border-color: white;
   color: white;
 }
 /*==================================================
-                    Hire me now
+                 progress
 ====================================================*/
-.hire-me {
-  margin: 50px 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: wrap;
+.progress {
+  height: 35px;
+  margin-bottom: 10px;
 }
-.hm-text {
-  width: 75%;
+ .progress .skill {
+  line-height: 35px;
+  padding: 0;
+  margin: 0 0 0 20px;
+  text-transform: uppercase;
 }
-.hm-btn {
-  margin-left: 10px;
+.progress .skill .val {
+  float: right;
+  font-style: normal;
+  margin: 0 20px 0 0;
 }
+  .progress-bar {
+  width: 1px;
+  text-align: left;
+  transition: 0.9s;
+}
+
+
+
+/*=====================================
+         my skills                      
+=======================================*/
+.my-skills{
+   background-color: #f4f4f4
+}
+
 /*=====================================
          Feedback                      
 =======================================*/
@@ -316,9 +375,12 @@ transition: .5s ease-in-out;
 /*===========================================
                 Footer
 =============================================*/
+footer{
+   background-color: #f4f4f4
+}
 .footer-menu {
-margin: 100px;
-
+  padding-top: 20px;
+  margin: 50px;
 }
 .text-nav {
   display: flex;
@@ -340,7 +402,7 @@ margin: 100px;
 }
 .text-nav input[type="search"] {
   background: url("img/search.png") no-repeat right center;
-  
+
   background-size: 15px;
   max-width: 30%;
   padding: 0px 20px;
@@ -351,10 +413,10 @@ margin: 100px;
 input[type="search"]:focus {
   outline: none;
 }
-input[type="search"]::-moz-focus-inner{
+input[type="search"]::-moz-focus-inner {
   margin: 0px 15px;
 }
-input[type="search"]::-webkit-search-cancel-button{
+input[type="search"]::-webkit-search-cancel-button {
   position: absolute;
   left: 5px;
   background-color: black;
@@ -365,12 +427,10 @@ input[type="search"]::-webkit-search-cancel-button{
   justify-content: center;
 }
 .social {
-  
 }
 .social svg {
   margin: 10px;
   color: #ddd;
-
 }
 .social > svg:hover {
   color: rgb(20, 164, 230);
@@ -392,34 +452,33 @@ input[type="search"]::-webkit-search-cancel-button{
 
 @media screen and (max-width: 991px) {
   /* start of large tablet styles */
-  
-  }
-  
-  @media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 767px) {
   /* start of medium tablet styles */
-  .hero-img{
+  .hero-img {
     display: none;
   }
-  .type{
+  .type {
     text-align: center;
     margin: 0px 10px;
     max-width: 100%;
   }
-  }
-  
-  @media screen and (max-width: 650px) {
+}
+
+@media screen and (max-width: 650px) {
   /* start of phone styles */
-  .hero-img{
+  .hero-img {
     display: none;
   }
-  .type{
+  .type {
     text-align: center;
     max-width: 100%;
   }
-  .menu-bar-icon{
+  .menu-bar-icon {
     display: inline-block;
   }
-  nav > ul{
+  nav > ul {
     display: none !important;
   }
   .text-nav ul li {
@@ -437,66 +496,63 @@ input[type="search"]::-webkit-search-cancel-button{
     border: 1px solid #ddd;
     transition: 3s ease-in-out;
   }
-  .text-nav input[type="search"]::placeholder{
-    
+  .text-nav input[type="search"]::placeholder {
   }
   input[type="search"]:focus {
     outline: none;
     max-width: 225%;
   }
+}
+@media screen and (max-width: 321px) {
+  .hero-img {
+    display: none;
   }
-  @media screen and (max-width: 321px) {
-    .hero-img{
-      display: none;
-    }
-    .type{
-      margin: 0px;
-      text-align: center;
-      max-width: 100%;
-    }
-    .type h3{
-      font-size: 16px;
-    }
-    .menu-bar-icon{
-      display: inline-block;
-    }
-    nav > ul{
-      display: none !important;
-    }
-    .hire-me {
-   
-      margin: 25px 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-flow: wrap;
-    }
-    .hm-text {
-      width: 75%;
-    }
-    .hm-btn {
-      margin-left: 10px;
-    }
-    .text-nav input[type="search"] {
-      background: url(img/search.png) no-repeat right;
-      background-origin: content-box;
-      background-size: 17px;
-      max-width: 37%;
-      padding-right: 3px;
-      border-radius: 20px;
-      border: 1px solid #ddd;
-      transition: 2s   cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-    .text-nav input[type="search"]::placeholder{
-      
-    }
-    input[type="search"]:focus {
-      outline: none;
-      max-width: 225%;
-    }
-    .text-nav ul li {
-      text-align: center;
-      display: block;
-      width: 100%;
-    }
+  .type {
+    margin: 0px;
+    text-align: center;
+    max-width: 100%;
   }
+  .type h3 {
+    font-size: 16px;
+  }
+  .menu-bar-icon {
+    display: inline-block;
+  }
+  nav > ul {
+    display: none !important;
+  }
+  .hire-me {
+    margin: 25px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+  }
+  .hm-text {
+    width: 75%;
+  }
+  .hm-btn {
+    margin-left: 10px;
+  }
+  .text-nav input[type="search"] {
+    background: url(img/search.png) no-repeat right;
+    background-origin: content-box;
+    background-size: 17px;
+    max-width: 37%;
+    padding-right: 3px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .text-nav input[type="search"]::placeholder {
+  }
+  input[type="search"]:focus {
+    outline: none;
+    max-width: 225%;
+  }
+  .text-nav ul li {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+}
