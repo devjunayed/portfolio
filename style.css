@@ -1,0 +1,502 @@
+/*==========================================
+                Defaults
+============================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  background-color: black;
+}
+#loading{
+  background: #fff url('img/spinner.gif') no-repeat center;
+  background-size: 5%;
+  height: 100vh;
+  z-index: 9999999999;
+  position: fixed;
+  width: 100%;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 980px;
+  height: auto;
+  background-color: white;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+svg {
+  color: #0d6efd;
+}
+/*==========================================
+                Header
+============================================*/
+header {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 25px 0px 25px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 1px 1px blanchedalmond;
+}
+.logo {
+  position: relative;
+  max-width: 50%;
+}
+.logo img {
+  float: left;
+  position: absolute;
+  top: 7px;
+  max-height: 35px;
+  max-width: 35px;
+}
+.logo p {
+  margin-left: 40px;
+}
+li > a.btn:hover {
+  box-shadow: 1px 3px #888888;
+}
+nav {
+  position: relative;
+  width: 50%;
+}
+nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav ul li {
+}
+nav ul li a {
+}
+
+/*Menu bar icon*/
+.menu-bar-icon{
+  position: absolute;
+  right: 0;
+  top: -30px;
+  display: none;
+  cursor: pointer;
+}
+.bar1, .bar2, .bar3{
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+/*=========================================================
+                    main
+===========================================================*/
+.hero {
+  clear: both;
+  position: relative;
+  min-height: 350px;
+}
+.hero-img{
+  margin: 20px;
+  min-height: 350px;
+  background: url('img/IMG20210422163328.png') no-repeat ;
+  background-size: 350px 400px;
+}
+
+
+.type {
+  max-width: 50%;
+  position: absolute;
+  right: 20px;
+  top: 100px;
+}
+#typed {
+  color: rgb(20, 164, 230);
+}
+/*==============================================================
+                    Services
+================================================================*/
+
+.services {
+  overflow: hidden;
+  clear: both;
+  position: relative;
+}
+.services-txt,
+.portfolio-txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.services h4,
+.portfolio h4 {
+  position: relative;
+  word-spacing: 200px;
+  font-family: Myriad Pro, sans-serif;
+  font-weight: lighter;
+  color: black;
+  opacity: 0.5;
+}
+.services-txt > h2,
+.portfolio-txt > h2 {
+  position: absolute;
+  font-size: 38px;
+  opacity: 0.1;
+}
+.services-main {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  max-width: 250px;
+  max-height: 230px;
+  margin: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+.card:hover {
+  color: white !important;
+  background-color: rgb(82, 82, 245);
+  box-shadow: 5px 5px #ddd;
+  margin: 10px;
+  padding: 20px;
+}
+.card:hover svg {
+  color: white;
+}
+.card:hover h6::after {
+  background-color: white;
+}
+
+.card p {
+  margin: 0 auto;
+}
+.card h6 {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.card h6::after {
+  content: "";
+  position: absolute;
+  margin: 10px 0px 10px 0px;
+  top: 90px;
+  right: 43%;
+  max-width: 40px;
+  max-height: 3px;
+  background-color: blue;
+}
+/*============================================
+                Portfolio
+==============================================*/
+.portfolio {
+  clear: both;
+  overflow: hidden;
+
+  margin-top: 100px;
+  background-color: #f4f4f4;
+}
+.portfolio h2 {
+}
+.portfolio h4 {
+}
+.portfolio-main {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  flex-direction: row;
+}
+.portfolio-demo {
+  margin: 10px;
+  border: 1px solid #ddd;
+  min-height: 200px;
+  position: relative;
+  
+}
+.portfolio-demo::after{
+
+  content: "";
+  position: absolute;
+background-color: blue;
+top: 0;
+left: 0;
+opacity: 0;
+min-height: 240px;
+width: 250px;
+
+transition: .5s ease-in-out;
+
+}
+.portfolio-demo:hover::after{
+  opacity: 0.5;
+}
+.portfolio-demo:hover .pd-txt{
+  color: white !important;
+  opacity: 1;
+  z-index: 9999999999;
+}
+
+.portfolio-demo > .demo {
+}
+.portfolio-demo > .demo > img {
+  max-width: 250px;
+
+}
+.portfolio-demo > .demo > img:hover {
+}
+
+.pd-txt{
+  z-index: -1;
+  text-align: center;
+  opacity: 0;
+  top: 50px;
+  max-width: 250px;
+  position: absolute;
+  transition: 1s ease-in;
+}
+.pd-txt>h2, .pd-txt>p{
+  color: white !important;
+}
+.pd-txt a{
+  border-color: white;
+  color: white;
+}
+/*==================================================
+                    Hire me now
+====================================================*/
+.hire-me {
+  margin: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+}
+.hm-text {
+  width: 75%;
+}
+.hm-btn {
+  margin-left: 10px;
+}
+/*=====================================
+         Feedback                      
+=======================================*/
+.feedback {
+  max-width: auto;
+  height: 400px;
+  background-color: #f4f4f4;
+}
+/*===========================================
+                Footer
+=============================================*/
+.footer-menu {
+margin: 100px;
+
+}
+.text-nav {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-flow: wrap;
+}
+.text-nav ul {
+  margin-right: 50px;
+  min-width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: wrap;
+}
+.text-nav ul li {
+}
+.text-nav ul li a {
+}
+.text-nav input[type="search"] {
+  background: url("img/search.png") no-repeat right center;
+  
+  background-size: 15px;
+  max-width: 30%;
+  padding: 0px 20px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  position: relative;
+}
+input[type="search"]:focus {
+  outline: none;
+}
+input[type="search"]::-moz-focus-inner{
+  margin: 0px 15px;
+}
+input[type="search"]::-webkit-search-cancel-button{
+  position: absolute;
+  left: 5px;
+  background-color: black;
+}
+.social-nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.social {
+  
+}
+.social svg {
+  margin: 10px;
+  color: #ddd;
+
+}
+.social > svg:hover {
+  color: rgb(20, 164, 230);
+}
+
+/*=======================================
+                Copyright
+==========================================*/
+.copyright {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+/*=================================================
+                Media Query
+===================================================*/
+/* start of desktop styles */
+
+@media screen and (max-width: 991px) {
+  /* start of large tablet styles */
+  
+  }
+  
+  @media screen and (max-width: 767px) {
+  /* start of medium tablet styles */
+  .hero-img{
+    display: none;
+  }
+  .type{
+    text-align: center;
+    margin: 0px 10px;
+    max-width: 100%;
+  }
+  }
+  
+  @media screen and (max-width: 650px) {
+  /* start of phone styles */
+  .hero-img{
+    display: none;
+  }
+  .type{
+    text-align: center;
+    max-width: 100%;
+  }
+  .menu-bar-icon{
+    display: inline-block;
+  }
+  nav > ul{
+    display: none !important;
+  }
+  .text-nav ul li {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .text-nav input[type="search"] {
+    background: url(img/search.png) no-repeat right;
+    background-origin: content-box;
+    background-size: 17px;
+    max-width: 37%;
+    padding-right: 3px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    transition: 3s ease-in-out;
+  }
+  .text-nav input[type="search"]::placeholder{
+    
+  }
+  input[type="search"]:focus {
+    outline: none;
+    max-width: 225%;
+  }
+  }
+  @media screen and (max-width: 321px) {
+    .hero-img{
+      display: none;
+    }
+    .type{
+      margin: 0px;
+      text-align: center;
+      max-width: 100%;
+    }
+    .type h3{
+      font-size: 16px;
+    }
+    .menu-bar-icon{
+      display: inline-block;
+    }
+    nav > ul{
+      display: none !important;
+    }
+    .hire-me {
+   
+      margin: 25px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: wrap;
+    }
+    .hm-text {
+      width: 75%;
+    }
+    .hm-btn {
+      margin-left: 10px;
+    }
+    .text-nav input[type="search"] {
+      background: url(img/search.png) no-repeat right;
+      background-origin: content-box;
+      background-size: 17px;
+      max-width: 37%;
+      padding-right: 3px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      transition: 2s   cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .text-nav input[type="search"]::placeholder{
+      
+    }
+    input[type="search"]:focus {
+      outline: none;
+      max-width: 225%;
+    }
+    .text-nav ul li {
+      text-align: center;
+      display: block;
+      width: 100%;
+    }
+  }
