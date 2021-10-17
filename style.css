@@ -6,6 +6,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* #14a4e6 */
+:root {
+  --main-color: rgb(20, 164, 230);
+}
 body {
   overflow-x: hidden;
 }
@@ -13,22 +17,29 @@ body {
   font-size: 24px;
 }
 .counters {
+  width: 100%;
   margin: 0 auto;
+}
+.active {
+  background: var(--main-color);
+  color: white !important;
+}
+.active:hover{
+  background-color: var(--main-color) !important;
 }
 /*
     CSS for loading icon
 */
 #loading {
-  background: #fff url("img/spinner.gif") no-repeat center;
+  background: #fff url("assets/img/spinner.gif") no-repeat center;
   background-size: 5%;
   height: 100vh;
-  z-index: 9999999999;
+  z-index: 9999;
   position: fixed;
   width: 100%;
 }
 .wrapper {
   margin: 0 auto;
-  min-width: 1200px;
   height: auto;
   background-color: white;
 }
@@ -41,14 +52,14 @@ li {
   list-style-type: none;
 }
 svg {
-  color: #0d6efd;
+  color: var(--main-color);
 }
 /*==========================================
                 Header
 ============================================*/
 header {
   display: flex;
-  max-width: 100%;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 25px 25px 0px 25px;
@@ -83,12 +94,73 @@ nav > ul {
   justify-content: space-between;
 }
 nav ul li {
+  position: relative;
+}
+nav ul li::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--main-color);
+  bottom: -10px;
+  left: 0;
+  position: absolute;
+  transition: 0.5s;
+}
+nav ul li:hover::after {
+  width: 100%;
 }
 nav ul li a {
+  padding: 20px 0;
+}
+nav ul li:last-child:hover::after {
+  width: 0%;
+}
+button.btn-hire-me,
+button.see-my-work,
+button.hire-me-now {
+  width: 100px;
+  padding: 7px 0;
+  text-align: center;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid var(--main-color) !important;
+  background: white;
+  opacity: 0.9;
+  color: var(--main-color);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+button.btn-hire-me span,
+button.see-my-work span,
+button.hire-me-now span {
+  background-color: var(--main-color);
+  height: 100%;
+  width: 0%;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+button.btn-hire-me:hover span,
+button.see-my-work:hover span,
+button.hire-me-now:hover span {
+  width: 100%;
+}
+button.btn-hire-me:hover,
+button.see-my-work:hover,
+button.hire-me-now:hover {
+  color: white !important;
+}
+button.see-my-work,
+button.hire-me-now {
+  width: 150px;
 }
 
 /*Menu bar icon*/
-.menu-bar-icon {
+/* .menu-bar-icon {
   position: absolute;
   right: 0;
   top: -30px;
@@ -107,7 +179,7 @@ nav ul li a {
 .change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 6px);
   transform: rotate(-45deg) translate(-9px, 6px);
-}
+} */
 
 /* Fade out the second bar */
 .change .bar2 {
@@ -124,38 +196,55 @@ nav ul li a {
 ===========================================================*/
 main {
   margin: 0 auto;
-  max-width: 1160px;
 }
+
 .hero {
   clear: both;
-  position: relative;
-  min-height: 350px;
-}
-.hero-img {
+  /* position: relative; */
+  max-width: 100%;
   margin: 20px;
+  margin-left: 15%;
   min-height: 350px;
-  background: url("img/IMG20210422163328.png") no-repeat;
+  background: url("assets/img/IMG20210422163328.png") no-repeat;
   background-size: 350px 400px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 .type {
-  max-width: 50%;
-  position: absolute;
-  right: 20px;
-  top: 100px;
+  /* top: 100px; */
+  width: 40%;
+  margin-right: 10%;
+  margin-left: 10%;
+  /* position: absolute;
+  right: 0; */
 }
 #typed {
   color: rgb(20, 164, 230);
 }
+
 /*==============================================================
                     Bio data
 ===============================================================*/
-.my-bio{
+.my-bio {
   background-color: #f4f4f4;
 }
+
 .bio-content {
-  width: 80%;
-  margin: 0 auto;
+  min-height: 250px;
+  background-image: url("assets/img/bio.svg");
+  background-repeat: no-repeat;
+  background-attachment: contain;
+  background-position: 80% 50%;
+  background-size: 350px 400px;
+  display: flex;
+  margin-left: 90px;
+  align-items: center;
+}
+.bio-content-main {
+  margin-left: 120px;
+  width: 30%;
   text-align: justify;
 }
 /*==============================================================
@@ -176,6 +265,9 @@ main {
   align-items: center;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+.bio-text {
+  padding-bottom: 0;
 }
 .services h4,
 .portfolio h4,
@@ -210,21 +302,54 @@ main {
   margin: 10px;
   padding: 20px;
   position: relative;
+  opacity: 0.9;
+  transition: 1s;
+}
+.card::before {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: var(--main-color);
+  z-index: -1;
+  height: 0%;
+  width: 100%;
+  transition: 1s;
+}
+.card:hover::before {
+  height: 100%;
+}
+.card::after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: var(--main-color);
+  z-index: -1;
+  height: 0%;
+  width: 100%;
+  transition: 1s;
+}
+.card:hover::after {
+  height: 100%;
 }
 
 .card:hover {
   color: white !important;
-  background-color: rgb(82, 82, 245);
-  box-shadow: 5px 5px #ddd;
+  box-shadow: 3px 3px rgb(6, 197, 255);
   margin: 10px;
   padding: 20px;
+  transition: 1s;
+}
+.card svg {
+  transition: 1s;
 }
 .card:hover svg {
   color: white;
 }
-.card:hover h6::after {
-  background-color: white;
-}
+/* .card:hover h6 {
+  color: white;
+} */
 
 .card p {
   margin: 0 auto;
@@ -233,16 +358,6 @@ main {
   margin-top: 15px;
   margin-bottom: 30px;
   text-align: center;
-}
-.card h6::after {
-  content: "";
-  position: absolute;
-  margin: 10px 0px 10px 0px;
-  top: 90px;
-  right: 43%;
-  max-width: 40px;
-  max-height: 3px;
-  background-color: blue;
 }
 /*============================================
                 Portfolio
@@ -303,7 +418,7 @@ main {
 .portfolio-demo:hover .pd-txt {
   color: white !important;
   opacity: 1;
-  z-index: 9999;
+  z-index: 9;
 }
 
 .portfolio-demo > .demo {
@@ -332,13 +447,17 @@ main {
   color: white;
 }
 /*==================================================
-                 progress
+                 progress myskills
 ====================================================*/
+.skills {
+  margin-left: 20%;
+  margin-right: 20%;
+}
 .progress {
   height: 35px;
   margin-bottom: 10px;
 }
- .progress .skill {
+.progress .skill {
   line-height: 35px;
   padding: 0;
   margin: 0 0 0 20px;
@@ -349,34 +468,33 @@ main {
   font-style: normal;
   margin: 0 20px 0 0;
 }
-  .progress-bar {
+.progress-bar {
   width: 1px;
   text-align: left;
   transition: 0.9s;
 }
 
-
-
 /*=====================================
          my skills                      
 =======================================*/
-.my-skills{
-   background-color: #f4f4f4
+.my-skills {
+  background-color: #f4f4f4;
 }
 
 /*=====================================
          Feedback                      
 =======================================*/
 .feedback {
-  max-width: auto;
+  margin: 0 auto;
+  max-width: 90%;
   height: 400px;
   background-color: #f4f4f4;
 }
 /*===========================================
                 Footer
 =============================================*/
-footer{
-   background-color: #f4f4f4
+footer {
+  background-color: #f4f4f4;
 }
 .footer-menu {
   padding-top: 20px;
@@ -401,7 +519,7 @@ footer{
 .text-nav ul li a {
 }
 .text-nav input[type="search"] {
-  background: url("img/search.png") no-repeat right center;
+  background: url("assets/img/search.png") no-repeat right center;
 
   background-size: 15px;
   max-width: 30%;
@@ -443,116 +561,4 @@ input[type="search"]::-webkit-search-cancel-button {
   padding: 20px;
   text-align: center;
   border-top: 1px solid #ddd;
-}
-
-/*=================================================
-                Media Query
-===================================================*/
-/* start of desktop styles */
-
-@media screen and (max-width: 991px) {
-  /* start of large tablet styles */
-}
-
-@media screen and (max-width: 767px) {
-  /* start of medium tablet styles */
-  .hero-img {
-    display: none;
-  }
-  .type {
-    text-align: center;
-    margin: 0px 10px;
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  /* start of phone styles */
-  .hero-img {
-    display: none;
-  }
-  .type {
-    text-align: center;
-    max-width: 100%;
-  }
-  .menu-bar-icon {
-    display: inline-block;
-  }
-  nav > ul {
-    display: none !important;
-  }
-  .text-nav ul li {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-  .text-nav input[type="search"] {
-    background: url(img/search.png) no-repeat right;
-    background-origin: content-box;
-    background-size: 17px;
-    max-width: 37%;
-    padding-right: 3px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-    transition: 3s ease-in-out;
-  }
-  .text-nav input[type="search"]::placeholder {
-  }
-  input[type="search"]:focus {
-    outline: none;
-    max-width: 225%;
-  }
-}
-@media screen and (max-width: 321px) {
-  .hero-img {
-    display: none;
-  }
-  .type {
-    margin: 0px;
-    text-align: center;
-    max-width: 100%;
-  }
-  .type h3 {
-    font-size: 16px;
-  }
-  .menu-bar-icon {
-    display: inline-block;
-  }
-  nav > ul {
-    display: none !important;
-  }
-  .hire-me {
-    margin: 25px 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: wrap;
-  }
-  .hm-text {
-    width: 75%;
-  }
-  .hm-btn {
-    margin-left: 10px;
-  }
-  .text-nav input[type="search"] {
-    background: url(img/search.png) no-repeat right;
-    background-origin: content-box;
-    background-size: 17px;
-    max-width: 37%;
-    padding-right: 3px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-  .text-nav input[type="search"]::placeholder {
-  }
-  input[type="search"]:focus {
-    outline: none;
-    max-width: 225%;
-  }
-  .text-nav ul li {
-    text-align: center;
-    display: block;
-    width: 100%;
-  }
 }
