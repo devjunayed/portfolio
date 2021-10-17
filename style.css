@@ -24,7 +24,7 @@ body {
   background: var(--main-color);
   color: white !important;
 }
-.active:hover{
+.active:hover {
   background-color: var(--main-color) !important;
 }
 /*
@@ -205,7 +205,7 @@ main {
   margin: 20px;
   margin-left: 15%;
   min-height: 350px;
-  background: url("assets/img/IMG20210422163328.png") no-repeat;
+  background: url("assets/img/bg.png") no-repeat;
   background-size: 350px 400px;
   display: flex;
   justify-content: end;
